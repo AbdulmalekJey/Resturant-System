@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TableController">
+    <children>
+        <TabPane fx:id="table" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab fx:id="menu" text="Mune">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="700.0">
+                            <children>
+                                <TableView fx:id="ordersTable" layoutX="75.0" layoutY="32.0" prefHeight="315.0" prefWidth="551.0">
+                                    <columns>
+                                        <TableColumn fx:id="p_ID" editable="false" prefWidth="117.0" text="Dish ID" />
+                                        <TableColumn fx:id="p_Name" editable="false" prefWidth="315.0" text="Dish Name" />
+                                        <TableColumn fx:id="price" editable="false" prefWidth="118.0" text="Price" />
+                                    </columns>
+                                </TableView>
+                                <Button fx:id="addDish" layoutX="75.0" layoutY="385.0" mnemonicParsing="false" onAction="#addDishToCart" prefHeight="25.0" prefWidth="110.0" text="Add Dish To Cart" />
+                        <Button fx:id="RefreshMenu" layoutX="516.0" layoutY="385.0" mnemonicParsing="false" onAction="#RefreshMenu" prefHeight="25.0" prefWidth="110.0" text="Refresh Menu" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="cart" text="Cart">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="700.0">
+                            <children>
+                                <TableView fx:id="cartTable" layoutX="75.0" layoutY="32.0" prefHeight="315.0" prefWidth="551.0">
+                                    <columns>
+                                        <TableColumn fx:id="p_ID2" editable="false" prefWidth="75.0" text="Dish ID" />
+                                        <TableColumn fx:id="p_Name2" editable="false" prefWidth="265.0" text="Dish Name" />
+                                        <TableColumn fx:id="quan2" editable="false" prefWidth="60.0" sortable="false" text="Quantity" />
+                                        <TableColumn fx:id="price2" editable="false" prefWidth="150.0" text="Price" />
+                                    </columns>
+                                </TableView>
+                                <Button fx:id="confirmOrder" layoutX="75.0" layoutY="385.0" mnemonicParsing="false" onAction="#sendCartToKitchen" text="Confirm Order" />
+                                <Label layoutX="479.0" layoutY="381.0" prefHeight="34.0" prefWidth="75.0" text="Total Price" />
+                                <TextArea fx:id="total_price" layoutX="554.0" layoutY="379.0" prefHeight="20.0" prefWidth="72.0" />
+                        <Button fx:id="removeFromCart" layoutX="283.0" layoutY="385.0" mnemonicParsing="false" onAction="#removeFromCart" text="Remove dish from cart" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="orderStatues" text="Statues">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="statesTable" layoutX="75.0" layoutY="32.0" prefHeight="315.0" prefWidth="551.0">
+                           <columns>
+                              <TableColumn fx:id="Order_ID" editable="false" prefWidth="75.0" text="Order ID" />
+                              <TableColumn fx:id="List_of_Dishes" editable="false" prefWidth="220.0" text="List of Dishes" />
+                              <TableColumn fx:id="Total_price" editable="false" prefWidth="75.0" text="Total Price" />
+                              <TableColumn fx:id="statusOfTheOrder" editable="false" prefWidth="180.0" sortable="false" text="Order Status " />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="Refrech_Statues" layoutX="300.0" layoutY="381.0" mnemonicParsing="false" onAction="#refrechStatues" prefHeight="25.0" prefWidth="100.0" text="REFRESH" />
+                     </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
